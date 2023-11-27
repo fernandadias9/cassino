@@ -53,4 +53,27 @@ public class PlayerDAO {
 		}
 		return playerVO;
 	}
+	
+	public PlayerVO checkPlayerBalanceDAO(int idPlayer) {
+		PlayerVO player = new PlayerVO();
+		Connection conn = Base.getConnection();
+		Statement stmt = Base.getStatement(conn);	
+		ResultSet result = null;
+		String query = "SELECT idplayer, balance FROM player WHERE idplayer = " + idPlayer;
+		try {
+			result = stmt.executeQuery(query);
+			if(result.next()) { 
+				player.setIdPlayer(idPlayer);
+				player.setBalance(result.getDouble(2));
+			}
+		} catch(SQLException error) {
+			System.out.println("\nError executing method query checkPlayerBalanceDAO.");
+			System.out.println("Error: " + error.getMessage());
+		} finally {
+			Base.closeResultSet(result);
+			Base.closeStatement(stmt);
+			Base.closeConnection(conn);
+		}
+		return player;
+	}
 }
