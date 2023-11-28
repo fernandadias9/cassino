@@ -20,6 +20,6 @@ public class BetRest {
 		BetDAO betDAO = new BetDAO();
 		bet.registerBetBO(betVO);
 		betDAO.updatePlayerBalanceDAO(betVO);		
-		return "player: " + betVO.getIdPlayer() + "balance: " + betDAO.checkPlayerBalanceDAO(betVO) + "txn: " + betVO.getIdTransaction();
+		return "player: " + betVO.getIdPlayer() + "\nbalance: " + betDAO.checkPlayerBalanceDAO(betVO) + "\ntxn: " + betVO.getIdTransaction();
 	}
 }
