@@ -60,7 +60,7 @@ public class WinDAO {
 		Statement stmt = Base.getStatement(conn);	
 		boolean updatedBalance = false;
 		double playerBalance = 0;
-		String query = "UPDATE FROM player SET balance = balance + " + winVO.getValue() + "WHERE idplayer = " + winVO.getIdPlayer();
+		String query = "UPDATE player SET balance = balance + " + winVO.getValue() + "WHERE idplayer = " + winVO.getIdPlayer();
 		try {
 			if(stmt.executeUpdate(query) == 1) {
 				updatedBalance = true;
