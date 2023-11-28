@@ -60,7 +60,7 @@ public class BetDAO {
 		Statement stmt = Base.getStatement(conn);	
 		boolean updatedBalance = false;
 		double playerBalance = 0;
-		String query = "UPDATE FROM player SET balance = balance - " + betVO.getValue() + "WHERE idplayer = " + betVO.getIdPlayer();
+		String query = "UPDATE player SET balance = balance - " + betVO.getValue() + "WHERE idplayer = " + betVO.getIdPlayer();
 		try {
 			if(stmt.executeUpdate(query)  == 1) {
 				updatedBalance = true;
