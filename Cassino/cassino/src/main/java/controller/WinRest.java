@@ -19,6 +19,6 @@ public class WinRest {
 		WinDAO winDAO = new WinDAO();
 		winDAO.registerWinDAO(winVO);
 		winDAO.updatePlayerBalanceDAO(winVO);		
-		return "player: " + winVO.getIdPlayer() + "balance: " + winDAO.checkPlayerBalanceDAO(winVO) + "txn: " + winVO.getIdTransaction();
+		return "player: " + winVO.getIdPlayer() + "\nbalance: " + winDAO.checkPlayerBalanceDAO(winVO) + "\ntxn: " + winVO.getIdTransaction();
 	}
 }
