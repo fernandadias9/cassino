@@ -18,4 +18,13 @@ public class PlayerRest {
 		PlayerDAO player = new PlayerDAO();
 		return player.checkPlayerBalanceDAO(idplayer);
 	}
+
+	@POST
+	@Path("/cadastrar")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public PlayerVO registerPlayerController(PlayerVO playerVO) {
+		PlayerBO playerBO = new PlayerBO();
+		return playerBO.registerPlayerBO(playerVO);
+	}
 }
